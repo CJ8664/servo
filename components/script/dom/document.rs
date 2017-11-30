@@ -1714,7 +1714,11 @@ impl Document {
         let event = ScriptMsg::SendMicrodata(String::from("Called from document"));
         println!("Sending event");
         self.send_to_constellation(event);
-        Microdata::parse();
+        
+        
+        let htmlelement = self.get_html_element();
+        Microdata::parse(htmlelement.unwrap().upcast::<Node>());
+      
     }
 
     // https://html.spec.whatwg.org/multipage/#pending-parsing-blocking-script

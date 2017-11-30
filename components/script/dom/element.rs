@@ -922,6 +922,10 @@ impl Element {
     pub fn local_name(&self) -> &LocalName {
         &self.local_name
     }
+    
+    pub fn tag_name(&self) -> DOMString{
+        self.TagName()
+    }
 
     pub fn parsed_name(&self, mut name: DOMString) -> LocalName {
         if self.html_element_in_html_document() {

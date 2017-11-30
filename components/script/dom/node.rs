@@ -566,7 +566,7 @@ impl Node {
             next_node: |n| n.GetNextSibling(),
         }
     }
-
+  
     pub fn preceding_siblings(&self) -> impl Iterator<Item=DomRoot<Node>> {
         SimpleNodeIterator {
             current: self.GetPreviousSibling(),
@@ -1307,6 +1307,7 @@ impl<I> Iterator for SimpleNodeIterator<I>
     }
 }
 
+//#[derive(Serialize)]
 pub struct TreeIterator {
     current: Option<DomRoot<Node>>,
     depth: usize,
